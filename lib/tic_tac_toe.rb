@@ -27,10 +27,6 @@ def move(board, index, player)
   board[index] = player
 end
 
-def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
-end
-
 def position_taken?(board, index)
   if board[index] == "X"
     return true
@@ -39,6 +35,10 @@ def position_taken?(board, index)
   else
     board[index] == false
   end
+end
+
+def valid_move?(board, index)
+  index.between?(0,8) && !position_taken?(board, index)
 end
 
 def turn_count(board)

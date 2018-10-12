@@ -88,7 +88,7 @@ def won?(board)
 end
 
 
-def full?(array)
+def full?(board)
   counter = 0
   array.each do |icon|
     if (icon == "X" || icon == "O")
@@ -103,24 +103,24 @@ def full?(array)
   end
 end
 
-def draw?(array)
-  if full?(array) && !won?(array)
+def draw?(board)
+  if full?(board) && !won?(board)
     return true
   else
     return false
   end
 end
 
-def over?(array)
-  if (won?(array) || draw?(array) || full?(array))
+def over?(board)
+  if (won?(board) || draw?(board) || full?(board))
     return true
   else
     return false
   end
 end
 
-def winner(array)
-  if won?(array)
+def winner(board)
+  if won?(board)
     WIN_COMBINATIONS.each do |win_combination|
       position_1 = array[win_combination[0]]
       position_2 = array[win_combination[1]]

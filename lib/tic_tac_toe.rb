@@ -41,8 +41,6 @@ def position_taken?(board, index)
   end
 end
 
-
-
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
@@ -55,14 +53,14 @@ def turn(board)
   end
 end
 
-def turn_count(array)
+def turn_count(board)
   counter = 0
-  array.each do |icon|
+  board.each do |icon|
     if (icon == "X" || icon == "O")
       counter +=1
     else
-    end
   end
+  return counter
 end
 
 def current_player(board)
